@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dojo Tweets</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Dojo Tweets</p>
+            <a href="/dashboard" class="button">Dashboard</a>
+            <a href="/users" class="button">Users</a>
+            <div class="toolbar">
+                <p>Welcome, {{ user }}</p>
+                <a href="/logout" class="logout">Log Out</a>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Write a Tweet:</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="flash">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/tweets/create" method="post">
+                <textarea name="tweet" placeholder="Your tweet here..."></textarea>
+                <input type="submit" value="Submit" class="submit">
+            </form>
+            <h1>Your Feed:</h1>
+            {% for tweet in all_tweets %}
+            <div class="tweet">
+                <div class="id">
+                    <p>{{ tweet.user.first_name }} {{ tweet.user.last_name }} says:</p>
+                    <p>{{ tweet.created_at }}</p>
+                </div>
+                <p>{{ tweet.content }}</p><hr>
+                <form action="/tweets/{{tweet.id}}/add_like" method="post" class="tweetbutton">
+                <input type="submit" value="Like" class="tweetbutton">
+                </form>
+                <form action="/tweets/{{tweet.id}}/edit" method="get" class="tweetbutton">
+                    <input type="submit" value="Edit" class="tweetbutton">
+                </form>
+                <form action="/tweets/{{tweet.id}}/delete" method="post" class="tweetbutton">
+                    <input type="submit" value="Delete" class="tweetbutton">
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

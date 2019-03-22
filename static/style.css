@@ -1,0 +1,204 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+label, input{
+    margin: 5px;
+    padding: 5px;
+}
+
+label{
+    width: 120px;
+    display: inline-block;
+}
+
+input.button{
+    width: 100px;
+}
+
+form.tweetbutton{
+    display: inline-block;
+}
+
+input.tweetbutton{
+    text-decoration: none;
+    color: #009ac7;
+    font-weight: 700;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #009ac7;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.flash{
+    color: red;
+}
+
+div.registration, div.login{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 200px;
+    margin-left: 50px;
+}
+
+div.header{
+    background-color: #009ac7;
+    margin: 0;
+    vertical-align: top;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header p, a.logout{
+    display: inline-block;
+    margin: 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.header p:first-child{
+    width: 150px;
+}
+
+a.button{
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+a.logout{
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.toolbar{
+    width: 325px;
+    display: inline-block;
+    margin-left: calc(100% - 687px);
+}
+
+textarea{
+    outline: none;
+    border: 1px solid grey;
+    resize: none;
+    overflow: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.content{
+    width: 600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: lightgray;
+    padding: 0 50px;
+    padding-top: 52px;
+}
+
+.content h1{
+    padding-top: 20px;
+}
+
+.submit{
+    margin: 0;
+    width: 100%;
+    background-color: #009ac7;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    padding: 5px;
+    border-spacing: 0;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.update{
+    width: 48%;
+}
+
+.submit:hover{
+    cursor: pointer;
+}
+
+.tweet{
+    background-color: white;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 50px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.id{
+    background-color: #009ac7;
+    color: white;
+    width: 100%;
+    
+}
+
+.id p{
+    display: inline-block;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.tweet p{
+    padding: 5px;
+}
+
+.full:last-child{
+    width: 100%;
+    margin-left: 0;
+}
+
+table{
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+td, th{
+    padding-left: 10px;
+}
+
+td:last-child{
+    text-align: center;
+}
+
+tr:nth-child(odd){
+    background-color: lightskyblue;
+}
+
+tr:nth-child(odd) .tweetbutton{
+    border-color: white;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+tr:nth-child(even) .tweetbutton{
+    border-color: lightskyblue;
+    color: lightskyblue;
+}
+
+tr:first-child{
+    background-color: #009ac7;
+    color: white;
+    font-weight: 700;
+}
