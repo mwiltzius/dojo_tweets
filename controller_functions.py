@@ -68,7 +68,7 @@ def edit_tweet(id):
 
 def update_tweet(id):
     if Tweet.validate_tweet(request.form):
-        return redirect(f'/tweets/{id}/edit')
+        return redirect('/tweets/%s/edit' id)
     Tweet.change_tweet(request.form, id)
     return redirect('/dashboard')
 
