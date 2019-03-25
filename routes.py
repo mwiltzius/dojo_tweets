@@ -1,5 +1,5 @@
 from config import app
-from controller_functions import index, process, login, active, logout, create_tweet, add_like, delete_tweet, edit_tweet, update_tweet, show_user_list, follow_user
+from controller_functions import *
 
 app.add_url_rule('/', view_func=index)
 app.add_url_rule('/register', view_func=process, methods=['POST'])
@@ -13,3 +13,5 @@ app.add_url_rule('/tweets/<id>/edit', view_func=edit_tweet)
 app.add_url_rule('/tweets/<id>/update', view_func=update_tweet, methods=['POST'])
 app.add_url_rule('/users', view_func=show_user_list)
 app.add_url_rule('/users/<id>/follow', view_func=follow_user, methods=['POST'])
+
+app.add_url_rule('/email', view_func=check_email, methods=['POST'])

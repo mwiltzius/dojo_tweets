@@ -81,3 +81,11 @@ def show_user_list():
 def follow_user(id):
     User.follow(id)
     return redirect('/users')
+
+def check_email():
+    found = False
+    email = User.query.filter_by(email=request.form['email']).first()
+    print('key_lift')
+    if email:
+        found = True
+    return render_template('partials/email.html', found=found)
